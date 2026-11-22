@@ -4,7 +4,7 @@
 
 ---
 
-## 🌟 Executive Overview
+##  Executive Overview
 Production-ready containerized web application infrastructure demonstrating modern cloud-native deployment patterns:
 - **Multi-Stage Docker Builds**: Segregates build dependencies (`node:20-alpine`) from lean runtime containers (`nginx:1.27-alpine-slim`), reducing image footprint from **1,120 MB down to 24.2 MB (97.8% reduction)**.
 - **NGINX Web Server Configuration**: Production-hardened static file serving with GZIP compression level 6, custom security headers (`CSP`, `HSTS`, `X-Frame-Options`), immutable static asset caching, and SPA fallback routing (`try_files $uri $uri/ /index.html;`).
@@ -13,7 +13,7 @@ Production-ready containerized web application infrastructure demonstrating mode
 
 ---
 
-## 🏗️ Architecture Flow
+##  Architecture Flow
 
 ```mermaid
 flowchart LR
@@ -42,18 +42,17 @@ flowchart LR
 
 ---
 
-## 🚀 Quick Start & Local Execution
+##  Quick Start & Local Execution
 
 ### 1. Install & Build
 ```powershell
-# Navigate to project directory
+
 cd C:\Users\naika\.gemini\antigravity\scratch\containerized-web-deployment
 
-# Run automated lint verification and unit tests
+
 npm test
 npm run lint
 
-# Compile production SPA bundle
 npm run build
 ```
 
@@ -64,7 +63,7 @@ npm run ci:verify
 ```
 
 ### 3. Run Simulated NGINX Production Web Server
-Executes a high-performance local server mimicking NGINX with GZIP, security headers, and the `/health` endpoint:
+Executes a high performance local server mimicking NGINX with GZIP, security headers, and the `/health` endpoint:
 ```powershell
 npm run serve:nginx
 ```
@@ -90,45 +89,3 @@ docker compose up -d
 
 ---
 
-## 📁 Repository Structure
-```
-containerized-web-deployment/
-├── .github/
-│   └── workflows/
-│       └── ci-cd.yml             # GitHub Actions CI/CD Pipeline
-├── k8s/
-│   ├── namespace.yaml           # web-production namespace
-│   ├── configmap.yaml           # Environment configurations
-│   ├── secret.yaml              # Cluster secrets
-│   ├── deployment.yaml          # 3-replica Deployment with RollingUpdate & probes
-│   ├── service.yaml             # ClusterIP service
-│   ├── ingress.yaml             # NGINX Ingress controller configuration
-│   ├── hpa.yaml                 # HorizontalPodAutoscaler (CPU 70%, Mem 80%)
-│   └── kustomization.yaml       # Kustomize composition
-├── nginx/
-│   ├── nginx.conf               # Hardened NGINX server block & gzip
-│   └── security-headers.conf    # OWASP security headers (CSP, HSTS, X-Frame)
-├── scripts/
-│   ├── lint-check.js            # Automated lint verification
-│   ├── simulate-ci.js           # Automated CI/CD execution pipeline
-│   └── simulate-nginx-server.js # Production NGINX web server simulation
-├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── PipelineVisualizer.jsx # Interactive CI/CD visualizer
-│   │   ├── ClusterMonitor.jsx     # Kubernetes cluster & pod monitor
-│   │   ├── NginxInspector.jsx     # NGINX route & header inspector
-│   │   ├── DockerfileViewer.jsx   # Multi-stage Docker breakdown
-│   │   └── CliVerification.jsx    # Terminal command runner
-│   ├── data/
-│   │   ├── pipelineData.js
-│   │   └── clusterData.js
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── tests/
-│   └── app.test.js              # Unit & verification test suite
-├── Dockerfile                   # Multi-stage production build
-├── docker-compose.yml           # Compose orchestration
-└── package.json
-```

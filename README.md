@@ -3,7 +3,7 @@
 ---
 
 ##  Executive Overview
-Production-ready containerized web application infrastructure demonstrating modern cloud-native deployment patterns:
+Production ready containerized web application infrastructure demonstrating modern cloud native deployment patterns:
 - **Multi-Stage Docker Builds**: Segregates build dependencies (`node:20-alpine`) from lean runtime containers (`nginx:1.27-alpine-slim`), reducing image footprint from **1,120 MB down to 24.2 MB (97.8% reduction)**.
 - **NGINX Web Server Configuration**: Production-hardened static file serving with GZIP compression level 6, custom security headers (`CSP`, `HSTS`, `X-Frame-Options`), immutable static asset caching, and SPA fallback routing (`try_files $uri $uri/ /index.html;`).
 - **Automated CI/CD Pipeline (GitHub Actions)**: Automated verification gating including zero-warning lint audits, unit test execution, bundle compilation, container security vulnerability scanning with Aqua Security Trivy, and Kubernetes dry-run validation.
@@ -45,7 +45,7 @@ flowchart LR
 ### 1. Install & Build
 ```powershell
 
-cd C:\Users\naika\.gemini\antigravity\scratch\containerized-web-deployment
+cd C:\Users\Antonawin\.gemini\antigravity\scratch\containerized-web-deployment
 
 
 npm test

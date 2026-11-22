@@ -1,6 +1,4 @@
 # Containerized Web Application Deployment & Automated CI/CD
-**Tech Stack:** Docker, Kubernetes, GitHub Actions, NGINX, React.js, Vite, Tailwind CSS  
-**Timeline:** 2025 – 2026 | **Author:** Abhijit Uday Naik
 
 ---
 
@@ -72,13 +70,11 @@ Test healthcheck endpoint: **[http://localhost:8080/health](http://localhost:808
 
 ### 4. Build Multi-Stage Docker Container (When Docker is running)
 ```powershell
-# Build image
+
 docker build -t abhijitnaik/containerized-web-app:1.0.0 .
 
-# Run container
 docker run -d -p 8080:80 --name web-app abhijitnaik/containerized-web-app:1.0.0
 
-# Verify healthcheck
 curl http://localhost:8080/health
 ```
 

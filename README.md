@@ -73,7 +73,7 @@ Test healthcheck endpoint: **[http://localhost:8080/health](http://localhost:808
 
 docker build -t abhijitnaik/containerized-web-app:1.0.0 .
 
-docker run -d -p 8080:80 --name web-app abhijitnaik/containerized-web-app:1.0.0
+docker run -d -p 8080:80 --name web-app antonawin/containerized-web-app:1.0.0
 
 curl http://localhost:8080/health
 ```
